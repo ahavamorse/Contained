@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="viY-ei-ORu">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,12 +15,26 @@
             <objects>
                 <viewController id="dMf-Fe-MWh" customClass="GameViewController" customModule="Contained" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AXs-Mp-xgK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-Ue-fQe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </skView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dbp-Ue-fQe" firstAttribute="top" secondItem="ieL-CD-mFB" secondAttribute="top" id="Ajz-lS-ie1"/>
+                            <constraint firstItem="ieL-CD-mFB" firstAttribute="bottom" secondItem="dbp-Ue-fQe" secondAttribute="bottom" id="BcE-vj-I4U"/>
+                            <constraint firstItem="dbp-Ue-fQe" firstAttribute="leading" secondItem="ieL-CD-mFB" secondAttribute="leading" id="WQm-Gs-DFn"/>
+                            <constraint firstItem="ieL-CD-mFB" firstAttribute="trailing" secondItem="dbp-Ue-fQe" secondAttribute="trailing" id="o3r-VM-pcb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ieL-CD-mFB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="game_controller" id="MJp-Ip-RNj"/>
+                    <connections>
+                        <outlet property="skview" destination="dbp-Ue-fQe" id="IEG-7g-gPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psx-sg-rLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,9 +55,54 @@
             <objects>
                 <viewController id="asn-Wu-urW" customClass="SettingsViewController" customModule="Contained" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eo3-kv-ctr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VAU-2L-2qJ">
+                                <rect key="frame" x="156.33333333333334" y="413" width="101.33333333333334" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dkt-Fv-qXq">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.33333333333333" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ8-F2-lTx">
+                                                <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-mX-Ic2">
+                                                <rect key="frame" x="52.333333333333314" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="toggleRoll:" destination="asn-Wu-urW" eventType="valueChanged" id="WVL-lA-Knv"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-dS-2lt">
+                                        <rect key="frame" x="0.0" y="39" width="101.33333333333333" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zoom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4T-RO-gbU">
+                                                <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kxp-a0-0aS">
+                                                <rect key="frame" x="52.333333333333314" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="toggleZoom:" destination="asn-Wu-urW" eventType="valueChanged" id="oMf-fk-DsC"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VAU-2L-2qJ" firstAttribute="centerX" secondItem="eo3-kv-ctr" secondAttribute="centerX" id="Pd8-bK-ECr"/>
+                            <constraint firstItem="VAU-2L-2qJ" firstAttribute="centerY" secondItem="eo3-kv-ctr" secondAttribute="centerY" id="XN6-sc-txL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aGW-8R-1GE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="Jpx-6l-ESf"/>
@@ -58,6 +117,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="viY-ei-ORu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EeD-1B-cqb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
