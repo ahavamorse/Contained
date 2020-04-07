@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Settings {
     
@@ -15,4 +16,6 @@ class Settings {
     
     var shouldRoll = false
     var shouldZoom = false
+    var shouldFade = false
+    var lastPosition = CGPoint(x: 207.0, y: 448.0)
 }
